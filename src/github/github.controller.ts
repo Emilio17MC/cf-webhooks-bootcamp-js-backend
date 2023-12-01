@@ -11,6 +11,9 @@ export class GithubController {
     @Body() body: any,
   ) {
     console.log({ githubEvent });
+
+    this.githubService.notify(`Event received: ${githubEvent}`);
+
     return { githubEvent };
   }
 }
